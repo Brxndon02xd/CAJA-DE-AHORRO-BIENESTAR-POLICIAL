@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Paginacontroller;
+use App\Http\Controllers\CategoriaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('/', [Paginacontroller::class, 'inicio']);
+Route::get('/InfoCate', [CategoriaController::class, 'informacionCategoria']);
+Route::get('/editar/{id}', [CategoriaController::class, 'editarCategoria']);
